@@ -1118,6 +1118,7 @@ GameObject:
   - component: {fileID: 1241991746}
   - component: {fileID: 1241991745}
   - component: {fileID: 1241991744}
+  - component: {fileID: 1241991747}
   m_Layer: 0
   m_Name: PlayerMarker
   m_TagString: Untagged
@@ -1220,6 +1221,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241991742}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1241991747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241991742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea050e46a647478397e2ab55bcb4a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatingObject
+  rotationSpeed: {x: 0, y: 90, z: 0}
 --- !u!1 &1314168460
 GameObject:
   m_ObjectHideFlags: 0

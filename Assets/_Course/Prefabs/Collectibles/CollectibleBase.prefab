@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 6598587159732699781}
   - component: {fileID: 2650536470797242234}
   - component: {fileID: 2194728502167866281}
+  - component: {fileID: 791402758515822856}
   - component: {fileID: 4412026811542086475}
   m_Layer: 0
   m_Name: CollectibleBase
@@ -351,7 +352,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -422,6 +423,19 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &791402758515822856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749274184609962358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fbc13e1fb62f43d1820d18a16294189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectibleItem
+  scoreValue: 1
 --- !u!114 &4412026811542086475
 MonoBehaviour:
   m_ObjectHideFlags: 0

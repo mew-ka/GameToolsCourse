@@ -782,7 +782,9 @@ GameObject:
   - component: {fileID: 552188333}
   - component: {fileID: 552188332}
   - component: {fileID: 552188331}
+  - component: {fileID: 552188337}
   - component: {fileID: 552188336}
+  - component: {fileID: 552188338}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Untagged
@@ -936,10 +938,138 @@ MonoBehaviour:
   m_GameObject: {fileID: 552188329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d43d7fff2e0d40d09e077d41979ec0b, type: 3}
+  m_Script: {fileID: 11500000, guid: d8248c02fa8ce4c33949c06a8f4cc430, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DebugMover
-  velocity: {x: 2, y: 0, z: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  moveSpeed: 5
+  sprintMultiplier: 1.6
+  orientation: {fileID: 0}
+  interactionTarget: {fileID: 944072665}
+--- !u!114 &552188337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552188329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 203e82fab9978421babba7c98e3546ce, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 552188336}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnSprint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5e9906eb-1d11-40e3-b1ec-c6d464aba499
+    m_ActionName: Gameplay/Sprint
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 552188336}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ddc3a69d-c55b-4152-b6e4-2914beb7e285
+    m_ActionName: 'Gameplay/Move[/Mouse/rightButton,/Pen/barrel1]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 552188336}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a72a02fa-6f8d-4bd3-87f3-cdba45555b08
+    m_ActionName: Gameplay/Interact
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 552188336}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5090a593-ab4c-44ca-95d4-d17c7c1562f8
+    m_ActionName: Gameplay/Pause
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 552188338}
+        m_TargetAssemblyTypeName: InputRebinder, Assembly-CSharp
+        m_MethodName: OnBeginRebind
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 57a6769e-4795-43a7-8bd0-d3a2b028cfce
+    m_ActionName: Gameplay/RebindInteract
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: KeyboardMouse
+  m_DefaultActionMap: Gameplay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &552188338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552188329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a61ab0d88c8c409583059dc7566ad39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputRebinder
+  playerInput: {fileID: 552188337}
+  actionName: Interact
+  bindingIndex: 0
 --- !u!1 &621278266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,6 +1778,11 @@ Transform:
   - {fileID: 2145901182}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &944072665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2497275905003130424, guid: 7cb87019131924d769564a5be39db724, type: 3}
+  m_PrefabInstance: {fileID: 3941446551184653219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &950982929
 GameObject:
   m_ObjectHideFlags: 0
